@@ -1,0 +1,27 @@
+# Reference this view as main__drivers
+schema: main
+table_name: drivers
+
+dimensions:
+  number: {}
+  code: {}
+  forename: {}
+  surname: {}
+  dob: {}
+  nationality: {}
+  url: {}
+
+  driver_id:
+    sql: '"driverId"'
+    format: ID
+    required_access_grants: [ test_access ]
+
+  driver_ref:
+    sql: '"driverRef"'
+
+  driver_name:
+    sql: CONCAT(${main__drivers.forename}, ' ', ${main__drivers.surname})
+
+measures:
+  count:
+    aggregate_type: count

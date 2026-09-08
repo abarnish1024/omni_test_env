@@ -1,0 +1,14 @@
+# Reference this view as main__status
+schema: main
+table_name: status
+
+dimensions:
+  status: {}
+
+  status_id:
+    sql: '"statusId"'
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count

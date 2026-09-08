@@ -1,0 +1,62 @@
+# Reference this view as main__lapdatasheet
+schema: main
+table_name: lapdatasheet
+
+dimensions:
+  speed:
+    sql: '"Speed"'
+
+  lap_dist_pct:
+    sql: '"LapDistPct"'
+
+  lat:
+    sql: '"Lat"'
+
+  lon:
+    sql: '"Lon"'
+
+  brake:
+    sql: '"Brake"'
+
+  throttle:
+    sql: '"Throttle"'
+
+  rpm:
+    sql: '"RPM"'
+
+  steering_wheel_angle:
+    sql: '"SteeringWheelAngle"'
+
+  gear:
+    sql: '"Gear"'
+
+  clutch:
+    sql: '"Clutch"'
+
+  absactive:
+    sql: '"ABSActive"'
+
+  drsactive:
+    sql: '"DRSActive"'
+
+  lat_accel:
+    sql: '"LatAccel"'
+
+  long_accel:
+    sql: '"LongAccel"'
+
+  vert_accel:
+    sql: '"VertAccel"'
+
+  yaw:
+    sql: '"Yaw"'
+
+  yaw_rate:
+    sql: '"YawRate"'
+
+  position_type:
+    sql: '"PositionType"'
+
+measures:
+  count:
+    aggregate_type: count

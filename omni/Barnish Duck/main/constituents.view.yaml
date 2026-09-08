@@ -1,0 +1,19 @@
+# Reference this view as main__constituents
+schema: main
+table_name: constituents
+
+dimensions:
+  display_name: {}
+  email: {}
+  created_at: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+  tenant_id:
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count

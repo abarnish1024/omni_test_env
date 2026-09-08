@@ -1,0 +1,20 @@
+# Reference this view as main__driver_pics
+schema: main
+table_name: driver_pics
+
+dimensions:
+  year:
+    sql: '"Year"'
+
+  team_name:
+    sql: '"Team_name"'
+
+  driver:
+    sql: '"Driver"'
+
+  pic:
+    sql: '"Pic"'
+
+measures:
+  count:
+    aggregate_type: count

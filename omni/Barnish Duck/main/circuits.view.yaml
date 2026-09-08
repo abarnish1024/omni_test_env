@@ -1,0 +1,56 @@
+# Reference this view as main__circuits
+schema: main
+table_name: circuits
+
+dimensions:
+  name: {}
+  location: {}
+  country: {}
+  lat: {}
+  lng: {}
+  alt: {}
+  url: {}
+
+  circuit_id:
+    sql: '"circuitId"'
+    format: ID
+
+  circuit_ref:
+    sql: '"circuitRef"'
+
+  h3_cell_id:
+    sql: h3_h3_to_string(h3_latlng_to_cell(CAST(${main__circuits.lat} AS DOUBLE),
+      CAST(${main__circuits.lng} AS DOUBLE), 3))
+    label: H3 Hex Code
+    group_label: Geospatial
+
+  h3_boundary_wkt:
+    sql: h3_cell_to_boundary_wkt(h3_latlng_to_cell(CAST(${main__circuits.lat} AS
+      DOUBLE), CAST(${main__circuits.lng} AS DOUBLE), 3))
+    label: H3 Boundary WKT
+    hidden: true
+
+  h3_center_lat:
+    sql: h3_cell_to_lat(h3_latlng_to_cell(CAST(${main__circuits.lat} AS DOUBLE),
+      CAST(${main__circuits.lng} AS DOUBLE), 3))
+    label: H3 Center Latitude
+    group_label: Geospatial
+
+  h3_center_lng:
+    sql: h3_cell_to_lng(h3_latlng_to_cell(CAST(${main__circuits.lat} AS DOUBLE),
+      CAST(${main__circuits.lng} AS DOUBLE), 3))
+    label: H3 Center Longitude
+    group_label: Geospatial
+
+measures:
+  count:
+    aggregate_type: count
+
+  circuit_count:
+    label: Circuit Count
+    aggregate_type: count
+
+  unique_h3_cells:
+    sql: ${main__circuits.h3_cell_id}
+    label: Unique H3 Hex Cells
+    aggregate_type: count_distinct

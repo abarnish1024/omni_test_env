@@ -1,0 +1,22 @@
+# Reference this view as main__pit_stops
+schema: main
+table_name: pit_stops
+
+dimensions:
+  stop: {}
+  lap: {}
+  time: {}
+  duration: {}
+  milliseconds: {}
+
+  race_id:
+    sql: '"raceId"'
+    format: ID
+
+  driver_id:
+    sql: '"driverId"'
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count

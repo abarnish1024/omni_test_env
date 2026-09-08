@@ -1,0 +1,8 @@
+base_view: main__f1_hex_grid
+label: F1 H3 Hex Grid
+
+joins: {}
+
+ai_context: |
+  H3 resolution-4 hex grid over Europe with F1 circuit counts per cell.
+  Use hex_geojson for map shapes and circuit_count for coloring.

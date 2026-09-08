@@ -1,0 +1,24 @@
+# Reference this view as main__lap_timings
+schema: main
+table_name: lap_timings
+
+dimensions:
+  lap: {}
+  position: {}
+  time: {}
+  milliseconds: {}
+
+  race_id:
+    sql: '"raceId"'
+    format: ID
+
+  driver_id:
+    sql: '"driverId"'
+    format: ID
+
+  position_int:
+    sql: CAST(${main__lap_timings.position} AS INTEGER)
+
+measures:
+  count:
+    aggregate_type: count

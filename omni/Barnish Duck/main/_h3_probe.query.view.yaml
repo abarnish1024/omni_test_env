@@ -1,0 +1,8 @@
+# Reference this view as main___h3_probe
+schema: main
+sql: |
+  SELECT h3_cell_to_lat(h3_h3_to_string(h3_latlng_to_cell(50.0,10.0,4))) AS val
+
+dimensions:
+  val:
+    sql: val

@@ -1,0 +1,23 @@
+# Reference this view as main__constructor_results
+schema: main
+table_name: constructor_results
+
+dimensions:
+  points: {}
+  status: {}
+
+  constructor_results_id:
+    sql: '"constructorResultsId"'
+    format: ID
+
+  race_id:
+    sql: '"raceId"'
+    format: ID
+
+  constructor_id:
+    sql: '"constructorId"'
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count

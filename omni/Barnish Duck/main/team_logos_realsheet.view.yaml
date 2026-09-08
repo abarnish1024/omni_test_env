@@ -1,0 +1,14 @@
+# Reference this view as main__team_logos_realsheet
+schema: main
+table_name: team_logos_realsheet
+
+dimensions:
+  team_name:
+    sql: '"Team_Name"'
+
+  team_logo:
+    sql: '"Team_Logo"'
+
+measures:
+  count:
+    aggregate_type: count

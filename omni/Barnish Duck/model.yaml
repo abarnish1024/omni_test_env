@@ -1,0 +1,20 @@
+dynamic_shared_extensions:
+  - user_attribute: tenant_id
+    mappings:
+      fairfield:
+        values_for_model: [ fairfield ]
+      harvard:
+        values_for_model: [ harvard ]
+      georgetown:
+        values_for_model: [ georgetown ]
+      holy_cross:
+        values_for_model: [ holy-cross ]
+      demo:
+        values_for_model: [ demo ]
+      westminster:
+        values_for_model: [ westminster ]
+
+access_grants:
+  test_access:
+    user_attribute: test_attribute
+    allowed_values: [ Test, Finance ]

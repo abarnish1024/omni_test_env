@@ -1,0 +1,11 @@
+# Reference this view as main__seasons
+schema: main
+table_name: seasons
+
+dimensions:
+  year: {}
+  url: {}
+
+measures:
+  count:
+    aggregate_type: count

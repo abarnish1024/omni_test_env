@@ -1,0 +1,30 @@
+# Reference this view as main__qualifying
+schema: main
+table_name: qualifying
+
+dimensions:
+  number: {}
+  position: {}
+  q1: {}
+  q2: {}
+  q3: {}
+
+  qualify_id:
+    sql: '"qualifyId"'
+    format: ID
+
+  race_id:
+    sql: '"raceId"'
+    format: ID
+
+  driver_id:
+    sql: '"driverId"'
+    format: ID
+
+  constructor_id:
+    sql: '"constructorId"'
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count

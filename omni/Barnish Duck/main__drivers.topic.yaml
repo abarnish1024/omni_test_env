@@ -1,0 +1,7 @@
+base_view: main__drivers
+label: Main Drivers
+
+joins:
+  main__driver_standings: {}
+  main__results:
+    main__races: {}

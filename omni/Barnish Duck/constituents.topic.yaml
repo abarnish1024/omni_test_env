@@ -1,0 +1,4 @@
+base_view: main__constituents
+label: Constituents
+
+joins: {}

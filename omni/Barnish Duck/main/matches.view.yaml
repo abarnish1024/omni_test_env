@@ -1,0 +1,20 @@
+# Reference this view as main__matches
+schema: main
+table_name: matches
+
+dimensions:
+  gameid: {}
+  platformid: {}
+  queueid: {}
+  seasonid: {}
+  duration: {}
+  creation: {}
+  version: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+measures:
+  count:
+    aggregate_type: count

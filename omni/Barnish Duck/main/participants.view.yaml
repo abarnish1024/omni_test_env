@@ -1,0 +1,20 @@
+# Reference this view as main__participants
+schema: main
+table_name: participants
+
+dimensions:
+  matchid: {}
+  player: {}
+  championid: {}
+  ss1: {}
+  ss2: {}
+  role: {}
+  position: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+measures:
+  count:
+    aggregate_type: count

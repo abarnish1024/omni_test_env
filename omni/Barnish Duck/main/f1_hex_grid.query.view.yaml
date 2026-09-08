@@ -1,0 +1,79 @@
+# Reference this view as main__f1_hex_grid
+schema: main
+sql: |
+  WITH circuit_cells AS (
+    SELECT
+      h3_latlng_to_cell(CAST("lat" AS DOUBLE), CAST("lng" AS DOUBLE), 4) AS h3_index,
+      COUNT(*) AS circuit_count
+    FROM main.circuits
+    GROUP BY 1
+  ),
+  grid AS (
+    SELECT DISTINCT unnest(h3_grid_disk(h3_index, 4)) AS h3_index
+    FROM circuit_cells
+  ),
+  base AS (
+    SELECT
+      h3_h3_to_string(g.h3_index) AS h3_cell_id,
+      h3_cell_to_lat(g.h3_index) AS h3_center_lat,
+      h3_cell_to_lng(g.h3_index) AS h3_center_lng,
+      h3_cell_to_boundary_wkt(g.h3_index) AS boundary_wkt,
+      COALESCE(c.circuit_count, 0) AS circuit_count
+    FROM grid g
+    LEFT JOIN circuit_cells c ON g.h3_index = c.h3_index
+  ),
+  coords AS (
+    SELECT
+      h3_cell_id,
+      h3_center_lat,
+      h3_center_lng,
+      circuit_count,
+      boundary_wkt,
+      unnest(string_split(regexp_extract(boundary_wkt, 'POLYGON \(\((.*)\)\)', 1), ', ')) AS pair
+    FROM base
+  ),
+  rings AS (
+    SELECT
+      h3_cell_id,
+      h3_center_lat,
+      h3_center_lng,
+      circuit_count,
+      '{"type":"Feature","properties":{"circuit_count":' || circuit_count || '},"geometry":{"type":"Polygon","coordinates":[[' ||
+      string_agg('[' || trim(split_part(pair, ' ', 1)) || ',' || trim(split_part(pair, ' ', 2)) || ']', ',') ||
+      ']]}}' AS hex_feature
+    FROM coords
+    GROUP BY 1, 2, 3, 4
+  )
+  SELECT
+    h3_cell_id,
+    h3_center_lat,
+    h3_center_lng,
+    circuit_count,
+    hex_feature AS hex_geojson
+  FROM rings
+
+dimensions:
+  h3_cell_id:
+    label: H3 Cell ID
+    primary_key: true
+
+  hex_geojson:
+    label: Hex GeoJSON
+
+  circuit_count:
+    sql: circuit_count
+    label: Circuit Count
+    format: number_0
+
+  h3_center_lat:
+    label: H3 Center Lat
+    format: number_2
+
+  h3_center_lng:
+    label: H3 Center Lng
+    format: number_2
+
+measures:
+  hex_cell_count:
+    label: Hex Cells
+    aggregate_type: count

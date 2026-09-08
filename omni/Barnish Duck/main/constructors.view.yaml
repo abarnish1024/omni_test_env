@@ -1,0 +1,19 @@
+# Reference this view as main__constructors
+schema: main
+table_name: constructors
+
+dimensions:
+  name: {}
+  nationality: {}
+  url: {}
+
+  constructor_id:
+    sql: '"constructorId"'
+    format: ID
+
+  constructor_ref:
+    sql: '"constructorRef"'
+
+measures:
+  count:
+    aggregate_type: count

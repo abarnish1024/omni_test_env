@@ -1,0 +1,27 @@
+# Reference this view as main__driver_standings
+schema: main
+table_name: driver_standings
+
+dimensions:
+  points: {}
+  position: {}
+  wins: {}
+
+  driver_standings_id:
+    sql: '"driverStandingsId"'
+    format: ID
+
+  race_id:
+    sql: '"raceId"'
+    format: ID
+
+  driver_id:
+    sql: '"driverId"'
+    format: ID
+
+  position_text:
+    sql: '"positionText"'
+
+measures:
+  count:
+    aggregate_type: count

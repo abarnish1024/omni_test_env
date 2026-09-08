@@ -1,0 +1,13 @@
+# Reference this view as main__teambans
+schema: main
+table_name: teambans
+
+dimensions:
+  matchid: {}
+  teamid: {}
+  championid: {}
+  banturn: {}
+
+measures:
+  count:
+    aggregate_type: count

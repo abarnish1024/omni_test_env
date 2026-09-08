@@ -1,0 +1,22 @@
+# Reference this view as main__teamstats
+schema: main
+table_name: teamstats
+
+dimensions:
+  matchid: {}
+  teamid: {}
+  firstblood: {}
+  firsttower: {}
+  firstinhib: {}
+  firstbaron: {}
+  firstdragon: {}
+  firstharry: {}
+  towerkills: {}
+  inhibkills: {}
+  baronkills: {}
+  dragonkills: {}
+  harrykills: {}
+
+measures:
+  count:
+    aggregate_type: count

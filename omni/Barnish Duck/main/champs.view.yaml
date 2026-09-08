@@ -1,0 +1,16 @@
+# Reference this view as main__champs
+label: ${{metadata.userAttributes.Team.values}}
+
+schema: main
+table_name: champs
+
+dimensions:
+  name: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+measures:
+  count:
+    aggregate_type: count

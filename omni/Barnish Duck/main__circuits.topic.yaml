@@ -1,0 +1,12 @@
+base_view: main__circuits
+label: F1 Circuits
+
+fields: [ main__circuits.*, main__races.count ]
+
+joins:
+  main__races: {}
+
+ai_context: |
+  F1 grand prix circuit locations worldwide.
+  Use lat and lng for map coordinates.
+  Use h3_cell_id to group circuits into H3 hexagonal bins.
