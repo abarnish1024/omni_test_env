@@ -1,0 +1,13 @@
+# Reference this view as omni_dbt__seasons
+schema_label: ""
+
+schema: omni_dbt
+table_name: seasons
+
+dimensions:
+  year: {}
+  url: {}
+
+measures:
+  count:
+    aggregate_type: count
