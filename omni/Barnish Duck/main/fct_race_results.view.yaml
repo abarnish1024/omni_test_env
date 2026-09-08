@@ -29,6 +29,12 @@ dimensions:
     description: Number of laps completed in the race. Renamed from `laps` so Omni
       Content Validator can show downstream blast radius.
 
+  laps:
+    sql: ${race_laps}
+
+  points:
+    sql: ${race_points_collected}
+
   race_points_collected:
     #This description was pulled from dbt.
     description: Championship points for the result. Renamed from `points` so Omni
