@@ -32,8 +32,8 @@ dimensions:
   laps:
     sql: ${race_laps}
 
-  points:
-    sql: ${race_points_collected}
+  nationality:
+    sql: ${driver_nationality}
 
   race_points_collected:
     #This description was pulled from dbt.
