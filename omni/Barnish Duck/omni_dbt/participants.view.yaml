@@ -1,0 +1,22 @@
+# Reference this view as omni_dbt__participants
+schema_label: ""
+
+schema: omni_dbt
+table_name: participants
+
+dimensions:
+  matchid: {}
+  player: {}
+  championid: {}
+  ss1: {}
+  ss2: {}
+  role: {}
+  position: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+measures:
+  count:
+    aggregate_type: count
