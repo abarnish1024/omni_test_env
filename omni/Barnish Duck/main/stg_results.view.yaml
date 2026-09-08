@@ -2,7 +2,7 @@
 #This description was pulled from dbt.
 description: Cleaned race results. `points` is the field to rename in a demo PR.
 
-schema: dbt_pr_1
+schema: main
 table_name: stg_results
 
 dimensions:
@@ -25,8 +25,8 @@ dimensions:
 
   points:
     #This description was pulled from dbt.
-    description: Championship points awarded for this result. Rename this column in
-      a PR to demonstrate Omni content-validator blast radius.
+    description: Championship points awarded for this result. The mart exposes this
+      as `race_points`.
 
   status_id:
     format: ID

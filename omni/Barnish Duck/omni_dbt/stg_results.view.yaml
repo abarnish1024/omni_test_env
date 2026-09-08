@@ -26,8 +26,8 @@ dimensions:
 
   points:
     #This description was pulled from dbt.
-    description: Championship points awarded for this result. Rename this column in
-      a PR to demonstrate Omni content-validator blast radius.
+    description: Championship points awarded for this result. The mart exposes this
+      as `race_points`.
 
   status_id:
     format: ID
