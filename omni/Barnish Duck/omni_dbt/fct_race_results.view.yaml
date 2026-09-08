@@ -1,8 +1,10 @@
-# Reference this view as main__fct_race_results
+# Reference this view as omni_dbt__fct_race_results
+schema_label: ""
+#This description was pulled from dbt.
 description: Race results joined to race and driver attributes. `race_points` is
   championship points (renamed from `points`).
 
-schema: main
+schema: omni_dbt
 table_name: fct_race_results
 
 dimensions:
@@ -25,17 +27,9 @@ dimensions:
     format: ID
 
   race_laps:
+    #This description was pulled from dbt.
     description: Number of laps completed in the race. Renamed from `laps` so Omni
       Content Validator can show downstream blast radius.
-
-  laps:
-    sql: ${race_laps}
-
-  nationality:
-    sql: ${driver_nationality}
-
-  points:
-    sql: ${points_collected}
 
 measures:
   count:
