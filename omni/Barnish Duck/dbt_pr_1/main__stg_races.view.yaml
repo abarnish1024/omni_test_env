@@ -2,7 +2,7 @@
 #This description was pulled from dbt.
 description: Cleaned race calendar from source f1.races
 
-schema: main
+schema: dbt_pr_1
 table_name: stg_races
 
 dimensions:

@@ -2,7 +2,7 @@
 #This description was pulled from dbt.
 description: Cleaned race results. `points` is the field to rename in a demo PR.
 
-schema: main
+schema: dbt_pr_1
 table_name: stg_results
 
 dimensions:

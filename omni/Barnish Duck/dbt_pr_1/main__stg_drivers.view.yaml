@@ -1,9 +1,8 @@
-# Reference this view as omni_dbt__stg_drivers
-schema_label: ""
+# Reference this view as main__stg_drivers
 #This description was pulled from dbt.
 description: Cleaned driver attributes
 
-schema: omni_dbt
+schema: dbt_pr_1
 table_name: stg_drivers
 
 dimensions:
