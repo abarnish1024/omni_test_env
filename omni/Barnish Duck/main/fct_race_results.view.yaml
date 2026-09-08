@@ -15,7 +15,7 @@ dimensions:
   grid: {}
   finish_position: {}
   race_points: {}
-  laps: {}
+  race_laps: {}
 
   result_id:
     format: ID
