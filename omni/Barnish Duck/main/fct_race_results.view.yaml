@@ -15,6 +15,7 @@ dimensions:
   grid: {}
   finish_position: {}
   laps: {}
+  race_points: {}
 
   result_id:
     format: ID
@@ -24,11 +25,6 @@ dimensions:
 
   driver_id:
     format: ID
-
-  points:
-    #This description was pulled from dbt.
-    description: Championship points for the result. Renamed from `points` so Omni
-      Content Validator can show downstream blast radius.
 
 measures:
   count:
