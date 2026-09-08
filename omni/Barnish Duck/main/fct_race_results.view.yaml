@@ -1,4 +1,5 @@
 # Reference this view as main__fct_race_results
+#This description was pulled from dbt.
 description: Race results joined to race and driver attributes. `race_points` is
   championship points (renamed from `points`).
 
@@ -14,6 +15,7 @@ dimensions:
   grid: {}
   finish_position: {}
   laps: {}
+  points: {}
 
   result_id:
     format: ID
