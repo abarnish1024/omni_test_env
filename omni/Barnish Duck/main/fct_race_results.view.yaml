@@ -15,11 +15,6 @@ dimensions:
   grid: {}
   finish_position: {}
 
-  race_points:
-    #This description was pulled from dbt.
-    description: Championship points for the result. Renamed from `points` so Omni
-      Content Validator can show downstream blast radius.
-
   result_id:
     format: ID
 
@@ -32,6 +27,11 @@ dimensions:
   race_laps:
     #This description was pulled from dbt.
     description: Number of laps completed in the race. Renamed from `laps` so Omni
+      Content Validator can show downstream blast radius.
+
+  race_points:
+    #This description was pulled from dbt.
+    description: Championship points for the result. Renamed from `points` so Omni
       Content Validator can show downstream blast radius.
 
 measures:
