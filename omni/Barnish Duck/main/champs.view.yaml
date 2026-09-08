@@ -8,6 +8,7 @@ dimensions:
   name: {}
 
   id:
+    label: test_id
     format: ID
     primary_key: true
 
