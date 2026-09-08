@@ -1,0 +1,24 @@
+# Reference this view as omni_dbt__teamstats
+schema_label: ""
+
+schema: omni_dbt
+table_name: teamstats
+
+dimensions:
+  matchid: {}
+  teamid: {}
+  firstblood: {}
+  firsttower: {}
+  firstinhib: {}
+  firstbaron: {}
+  firstdragon: {}
+  firstharry: {}
+  towerkills: {}
+  inhibkills: {}
+  baronkills: {}
+  dragonkills: {}
+  harrykills: {}
+
+measures:
+  count:
+    aggregate_type: count
