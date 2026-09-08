@@ -1,4 +1,5 @@
 # Reference this view as main__fct_race_results
+#This description was pulled from dbt.
 description: Race results joined to race and driver attributes. `race_points` is
   championship points (renamed from `points`).
 
@@ -25,6 +26,7 @@ dimensions:
     format: ID
 
   race_laps:
+    #This description was pulled from dbt.
     description: Number of laps completed in the race. Renamed from `laps` so Omni
       Content Validator can show downstream blast radius.
 
