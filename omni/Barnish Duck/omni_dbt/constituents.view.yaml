@@ -1,0 +1,45 @@
+# Reference this view as omni_dbt__constituents
+schema_label: ""
+
+schema: omni_dbt
+table_name: constituents
+
+dimensions:
+  display_name: {}
+  email: {}
+  created_at: {}
+  cf_fairfield__donor_affinity_score: {}
+  cf_fairfield__preferred_channel: {}
+  t_shirt_size: {}
+  frat_name: {}
+  alumni_segment: {}
+  class_year_pref: {}
+  testingthisout: {}
+  extmodel: {}
+  house_affiliation: {}
+  wow_this_is_supppperrrr_cool_i_love_omni: {}
+  cursor_is_really_cool: {}
+  csv_test: {}
+  george_town_is_great: {}
+  i_hope_people_donate: {}
+  givecampus_is_really_great: {}
+  gc_team_is_great: {}
+  please_give_me_money: {}
+  show_me_the_money: {}
+  i_need_more_money: {}
+  fake_test: {}
+  cool_stuff: {}
+  viewer_write_test: {}
+  thisisaviewertest: {}
+  i_hope_this_is_cool: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+  tenant_id:
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count
