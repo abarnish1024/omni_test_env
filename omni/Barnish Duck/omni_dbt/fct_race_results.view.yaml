@@ -15,7 +15,7 @@ dimensions:
   driver_nationality: {}
   grid: {}
   finish_position: {}
-  points_collected: {}
+  points_collected_in_race: {}
 
   result_id:
     format: ID
