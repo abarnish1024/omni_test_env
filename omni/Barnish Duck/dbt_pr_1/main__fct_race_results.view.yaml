@@ -24,11 +24,6 @@ dimensions:
   driver_id:
     format: ID
 
-  points:
-    #This description was pulled from dbt.
-    description: Championship points for the result. Rename to race_points in a
-      feature PR to demonstrate Omni Content Validator blast radius.
-
   race_points:
     description: Championship points for the result. Renamed from `points`.
 
