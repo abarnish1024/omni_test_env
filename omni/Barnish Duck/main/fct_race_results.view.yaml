@@ -2,7 +2,7 @@
 description: Race results joined to race and driver attributes. `race_points` is
   championship points (renamed from `points`).
 
-schema: dbt_pr_1
+schema: main
 table_name: fct_race_results
 
 dimensions:
@@ -35,8 +35,8 @@ measures:
 dbt:
   name: fct_race_results
   target_schema: main
-  description: Race results joined to race and driver attributes. `points` is the
-    demo rename/deprecation field.
+  description: Race results joined to race and driver attributes. `race_points` is
+    championship points (renamed from `points`).
   config:
     materialized: table
   code: |-
@@ -51,7 +51,7 @@ dbt:
       drivers.nationality as driver_nationality,
       results.grid,
       results.finish_position,
-      results.points,
+      results.points as race_points,
       results.laps
     from {{ ref('stg_results') }} as results
     left join {{ ref('stg_races') }} as races

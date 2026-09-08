@@ -1,8 +1,7 @@
 # Reference this view as main__dim_drivers
-#This description was pulled from dbt.
 description: One row per driver
 
-schema: dbt_pr_1
+schema: main
 table_name: dim_drivers
 
 dimensions:
@@ -15,7 +14,6 @@ dimensions:
     format: ID
 
   driver_name:
-    #This description was pulled from dbt.
     description: Display name. Rename this in a dbt PR to show Omni downstream impact.
 
 measures:
