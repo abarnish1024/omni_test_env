@@ -14,7 +14,7 @@ dimensions:
   driver_nationality: {}
   grid: {}
   finish_position: {}
-  points_collected: {}
+  points_collected_in_race: {}
 
   result_id:
     format: ID
@@ -35,6 +35,9 @@ dimensions:
 
   nationality:
     sql: ${driver_nationality}
+
+  points:
+    sql: ${points_collected_in_race}
 
 measures:
   count:
