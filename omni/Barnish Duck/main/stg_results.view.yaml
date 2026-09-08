@@ -1,0 +1,58 @@
+# Reference this view as main__stg_results
+#This description was pulled from dbt.
+description: Cleaned race results. `points` is the field to rename in a demo PR.
+
+schema: main
+table_name: stg_results
+
+dimensions:
+  grid: {}
+  finish_position: {}
+  position_order: {}
+  laps: {}
+
+  result_id:
+    format: ID
+
+  race_id:
+    format: ID
+
+  driver_id:
+    format: ID
+
+  constructor_id:
+    format: ID
+
+  points:
+    #This description was pulled from dbt.
+    description: Championship points awarded for this result. Rename this column in
+      a PR to demonstrate Omni content-validator blast radius.
+
+  status_id:
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count
+
+#The info below was pulled from your dbt repository and is read-only.
+dbt:
+  name: stg_results
+  target_schema: main
+  description: Cleaned race results. `points` is the field to rename in a demo PR.
+  config:
+    materialized: view
+  code: |-
+    select
+      "resultId" as result_id,
+      "raceId" as race_id,
+      "driverId" as driver_id,
+      "constructorId" as constructor_id,
+      "grid" as grid,
+      try_cast("position" as integer) as finish_position,
+      "positionOrder" as position_order,
+      "points" as points,
+      "laps" as laps,
+      "statusId" as status_id
+    from {{ source('f1', 'results') }}
+  referenced_by: [ fct_race_results ]

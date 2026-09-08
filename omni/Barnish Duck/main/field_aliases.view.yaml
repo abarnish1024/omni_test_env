@@ -1,0 +1,21 @@
+# Reference this view as main__field_aliases
+schema: main
+table_name: field_aliases
+
+dimensions:
+  base_field_key: {}
+  alias_key: {}
+  created_by: {}
+  created_at: {}
+  updated_at: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+  tenant_id:
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count
