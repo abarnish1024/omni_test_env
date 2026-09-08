@@ -1,0 +1,27 @@
+# Reference this view as omni_dbt__custom_fields
+schema_label: ""
+
+schema: omni_dbt
+table_name: custom_fields
+
+dimensions:
+  field_key: {}
+  label: {}
+  description: {}
+  data_type: {}
+  created_by: {}
+  created_at: {}
+  updated_at: {}
+  column_name: {}
+  target_table: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+  tenant_id:
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count
