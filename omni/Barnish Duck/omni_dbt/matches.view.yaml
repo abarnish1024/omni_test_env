@@ -1,0 +1,22 @@
+# Reference this view as omni_dbt__matches
+schema_label: ""
+
+schema: omni_dbt
+table_name: matches
+
+dimensions:
+  gameid: {}
+  platformid: {}
+  queueid: {}
+  seasonid: {}
+  duration: {}
+  creation: {}
+  version: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+measures:
+  count:
+    aggregate_type: count
