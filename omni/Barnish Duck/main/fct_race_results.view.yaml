@@ -36,9 +36,6 @@ dimensions:
   nationality:
     sql: ${driver_nationality}
 
-  points:
-    sql: ${points_collected_in_race}
-
 measures:
   count:
     aggregate_type: count
