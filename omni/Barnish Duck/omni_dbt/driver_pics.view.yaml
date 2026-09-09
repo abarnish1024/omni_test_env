@@ -1,0 +1,22 @@
+# Reference this view as omni_dbt__driver_pics
+schema_label: ""
+
+schema: omni_dbt
+table_name: driver_pics
+
+dimensions:
+  year:
+    sql: '"Year"'
+
+  team_name:
+    sql: '"Team_name"'
+
+  driver:
+    sql: '"Driver"'
+
+  pic:
+    sql: '"Pic"'
+
+measures:
+  count:
+    aggregate_type: count

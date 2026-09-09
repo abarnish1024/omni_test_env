@@ -1,0 +1,25 @@
+# Reference this view as omni_dbt__circuits
+schema_label: ""
+
+schema: omni_dbt
+table_name: circuits
+
+dimensions:
+  name: {}
+  location: {}
+  country: {}
+  lat: {}
+  lng: {}
+  alt: {}
+  url: {}
+
+  circuit_id:
+    sql: '"circuitId"'
+    format: ID
+
+  circuit_ref:
+    sql: '"circuitRef"'
+
+measures:
+  count:
+    aggregate_type: count
