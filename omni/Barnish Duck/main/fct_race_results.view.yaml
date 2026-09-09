@@ -15,11 +15,6 @@ dimensions:
   grid: {}
   finish_position: {}
 
-  points_collected_total:
-    #This description was pulled from dbt.
-    description: Championship points for the result. Renamed from `points` so Omni
-      Content Validator can show downstream blast radius.
-
   result_id:
     format: ID
 
@@ -40,8 +35,10 @@ dimensions:
   nationality:
     sql: ${driver_nationality}
 
-  points:
-    sql: ${points_collected_total}
+  points_collected_total:
+    #This description was pulled from dbt.
+    description: Championship points for the result. Renamed from `points` so Omni
+      Content Validator can show downstream blast radius.
 
 measures:
   count:
