@@ -1,7 +1,8 @@
 # Reference this view as main__fct_race_results
 #This description was pulled from dbt.
-description: Race results joined to race and driver attributes. `race_points` is
-  championship points (renamed from `points`).
+description: Race results joined to race and driver attributes.
+  `championship_points` is championship points (renamed from
+  `points_collected_total`).
 
 schema: main
 table_name: fct_race_results
@@ -15,10 +16,11 @@ dimensions:
   grid: {}
   finish_position: {}
 
-  points_collected_total:
+  championship_points:
     #This description was pulled from dbt.
-    description: Championship points for the result. Renamed from `points` so Omni
-      Content Validator can show downstream blast radius.
+    description: Championship points for the result. Renamed from
+      `points_collected_total` so Omni Content Validator can show downstream
+      blast radius.
 
   result_id:
     format: ID
@@ -41,7 +43,7 @@ dimensions:
     sql: ${driver_nationality}
 
   points:
-    sql: ${points_collected_total}
+    sql: ${championship_points}
 
 measures:
   count:
@@ -51,8 +53,9 @@ measures:
 dbt:
   name: fct_race_results
   target_schema: main
-  description: Race results joined to race and driver attributes. `race_points` is
-    championship points (renamed from `points`).
+  description: Race results joined to race and driver attributes.
+    `championship_points` is championship points (renamed from
+    `points_collected_total`).
   config:
     materialized: table
   code: |-
@@ -67,7 +70,7 @@ dbt:
       drivers.nationality as driver_nationality,
       results.grid,
       results.finish_position,
-      results.points as points_collected_total,
+      results.points as championship_points,
       results.laps as race_laps
     from {{ ref('stg_results') }} as results
     left join {{ ref('stg_races') }} as races
