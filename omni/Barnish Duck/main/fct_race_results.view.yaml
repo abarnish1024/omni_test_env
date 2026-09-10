@@ -40,9 +40,6 @@ dimensions:
   nationality:
     sql: ${driver_nationality}
 
-  points:
-    sql: ${points_collected_total}
-
 measures:
   count:
     aggregate_type: count
