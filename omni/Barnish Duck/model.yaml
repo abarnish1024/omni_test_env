@@ -14,6 +14,9 @@ dynamic_shared_extensions:
       westminster:
         values_for_model: [ westminster ]
 
+ai_context: when a user asks for anything git related you need to use this repo
+  - https://github.com/abarnish1024/dbt_test_env
+
 access_grants:
   test_access:
     user_attribute: test_attribute
