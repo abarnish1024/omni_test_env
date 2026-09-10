@@ -16,6 +16,7 @@ dimensions:
   driver_nationality: {}
   grid: {}
   finish_position: {}
+  championship_points_total: {}
 
   result_id:
     format: ID
@@ -30,12 +31,6 @@ dimensions:
     #This description was pulled from dbt.
     description: Number of laps completed in the race. Renamed from `laps` so Omni
       Content Validator can show downstream blast radius.
-
-  championship_points:
-    #This description was pulled from dbt.
-    description: Championship points for the result. Renamed from
-      `points_collected_total` so Omni Content Validator can show downstream
-      blast radius.
 
 measures:
   count:
@@ -62,7 +57,7 @@ dbt:
       drivers.nationality as driver_nationality,
       results.grid,
       results.finish_position,
-      results.points as championship_points,
+      results.points as championship_points_total,
       results.laps as race_laps
     from {{ ref('stg_results') }} as results
     left join {{ ref('stg_races') }} as races
