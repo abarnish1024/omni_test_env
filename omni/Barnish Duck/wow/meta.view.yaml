@@ -1,0 +1,11 @@
+# Reference this view as wow__meta
+schema: wow
+table_name: meta
+
+dimensions:
+  key: {}
+  value: {}
+
+measures:
+  count:
+    aggregate_type: count

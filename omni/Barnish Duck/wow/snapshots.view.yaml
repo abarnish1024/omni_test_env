@@ -1,0 +1,23 @@
+# Reference this view as wow__snapshots
+schema: wow
+table_name: snapshots
+
+dimensions:
+  source: {}
+  region: {}
+  realm_slug: {}
+  fetched_at: {}
+  last_modified: {}
+  http_status: {}
+  auction_count: {}
+
+  snapshot_id:
+    format: ID
+    primary_key: true
+
+  connected_realm_id:
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count
