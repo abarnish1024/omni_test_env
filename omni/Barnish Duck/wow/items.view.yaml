@@ -1,0 +1,25 @@
+# Reference this view as wow__items
+schema: wow
+table_name: items
+
+dimensions:
+  name: {}
+  quality_type: {}
+  item_class: {}
+  item_subclass: {}
+  sell_price_copper: {}
+  purchase_price_copper: {}
+  is_equippable: {}
+  is_stackable: {}
+  item_level: {}
+  is_crafting_reagent: {}
+  description: {}
+  updated_at: {}
+
+  item_id:
+    format: ID
+    primary_key: true
+
+measures:
+  count:
+    aggregate_type: count

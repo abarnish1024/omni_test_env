@@ -1,0 +1,20 @@
+# Reference this view as wow__my_trades
+schema: wow
+table_name: my_trades
+
+dimensions:
+  ts: {}
+  side: {}
+  quantity: {}
+  unit_price_copper: {}
+  notes: {}
+
+  trade_id:
+    format: ID
+
+  item_id:
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count

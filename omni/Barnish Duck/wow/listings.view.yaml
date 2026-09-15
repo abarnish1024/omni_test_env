@@ -1,0 +1,36 @@
+# Reference this view as wow__listings
+schema: wow
+table_name: listings
+
+dimensions:
+  source: {}
+  quantity: {}
+  unit_price_copper: {}
+  buyout_copper: {}
+  bid_copper: {}
+  time_left: {}
+  pet_level: {}
+  item_context: {}
+  bonus_lists: {}
+
+  snapshot_id:
+    format: ID
+
+  auction_id:
+    format: ID
+
+  item_id:
+    format: ID
+
+  pet_species_id:
+    format: ID
+
+  pet_breed_id:
+    format: ID
+
+  pet_quality_id:
+    format: ID
+
+measures:
+  count_:
+    aggregate_type: count
