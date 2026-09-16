@@ -11,10 +11,40 @@ dimensions:
 
   trade_id:
     format: ID
+    primary_key: true
 
   item_id:
     format: ID
 
+  unit_price_gold:
+    sql: ${unit_price_copper} / 10000.0
+    label: Unit Price (Gold)
+    format: number_2
+    description: Per-unit trade price converted from copper to gold.
+
+  total_value_gold:
+    sql: (${unit_price_copper} * ${quantity}) / 10000.0
+    label: Total Value (Gold)
+    format: number_2
+    description: Unit price times quantity, converted from copper to gold.
+
 measures:
   count:
     aggregate_type: count
+
+  total_quantity:
+    sql: ${quantity}
+    label: Total Quantity
+    aggregate_type: sum
+
+  total_value_gold_sum:
+    sql: ${total_value_gold}
+    label: Total Value (Gold)
+    format: number_2
+    aggregate_type: sum
+
+  average_unit_price_gold:
+    sql: ${unit_price_gold}
+    label: Average Unit Price (Gold)
+    format: number_2
+    aggregate_type: average

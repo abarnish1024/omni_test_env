@@ -1,0 +1,11 @@
+base_view: wow__my_trades
+label: WoW My Trades
+description: Personal buy and sell trade log, enriched with item metadata.
+
+joins:
+  wow__items: {}
+
+ai_context: Each row is one recorded trade. The side dimension distinguishes
+  buys from sells. Prices are stored in copper; gold-denominated dimensions are
+  available and are usually the better choice for display. Use ts for time
+  trends and join to items for name, quality, and class breakdowns.

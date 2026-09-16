@@ -1,0 +1,16 @@
+base_view: wow__listings
+label: WoW Auction Listings
+description: Auction house listings snapshotted from the WoW API, enriched with
+  item metadata and snapshot realm/region context.
+
+joins:
+  wow__items: {}
+  wow__snapshots: {}
+
+ai_context: Each row is a single auction listing within a snapshot. Prices are
+  stored in copper; gold-denominated dimensions are available and are usually
+  the better choice for display. Use snapshots.fetched_at for time trends,
+  snapshots.region and snapshots.realm_slug for market segmentation, and
+  items.name / items.quality_type / items.item_class for item breakdowns.
+  buyout_copper is the "buy it now" price and unit_price_copper is the per-unit
+  price for stackable commodities.

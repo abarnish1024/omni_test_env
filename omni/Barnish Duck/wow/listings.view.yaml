@@ -31,6 +31,49 @@ dimensions:
   pet_quality_id:
     format: ID
 
+  buyout_gold:
+    sql: ${buyout_copper} / 10000.0
+    label: Buyout (Gold)
+    format: number_2
+    description: Buy-it-now price converted from copper to gold.
+
+  unit_price_gold:
+    sql: ${unit_price_copper} / 10000.0
+    label: Unit Price (Gold)
+    format: number_2
+    description: Per-unit commodity price converted from copper to gold.
+
+  bid_gold:
+    sql: ${bid_copper} / 10000.0
+    label: Bid (Gold)
+    format: number_2
+    description: Current bid converted from copper to gold.
+
 measures:
   count_:
     aggregate_type: count
+
+  total_quantity:
+    sql: ${quantity}
+    label: Total Quantity
+    aggregate_type: sum
+
+  average_buyout_gold:
+    sql: ${buyout_gold}
+    label: Average Buyout (Gold)
+    format: number_2
+    aggregate_type: average
+
+  average_unit_price_gold:
+    sql: ${unit_price_gold}
+    label: Average Unit Price (Gold)
+    format: number_2
+    aggregate_type: average
+
+  min_unit_price_gold:
+    sql: ${unit_price_gold}
+    label: Min Unit Price (Gold)
+    format: number_2
+    aggregate_type: min
+
+custom_compound_primary_key_sql: [ '"snapshot_id"', '"auction_id"' ]
