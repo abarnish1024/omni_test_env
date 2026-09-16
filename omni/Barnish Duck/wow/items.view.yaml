@@ -20,6 +20,18 @@ dimensions:
     format: ID
     primary_key: true
 
+  sell_price_gold:
+    sql: ${sell_price_copper} / 10000.0
+    label: Vendor Sell Price (Gold)
+    format: number_2
+    description: Price the vendor pays, converted from copper to gold.
+
+  purchase_price_gold:
+    sql: ${purchase_price_copper} / 10000.0
+    label: Vendor Purchase Price (Gold)
+    format: number_2
+    description: Price to buy from a vendor, converted from copper to gold.
+
 measures:
   count:
     aggregate_type: count
