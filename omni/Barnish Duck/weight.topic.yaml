@@ -1,0 +1,7 @@
+base_view: garmin__weight
+label: Weight
+description: Garmin scale weigh-ins.
+
+joins: {}
+
+ai_context: Personal weight in kilograms, avg_weight_kg.

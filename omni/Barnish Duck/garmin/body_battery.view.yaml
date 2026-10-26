@@ -1,0 +1,30 @@
+# Reference this view as garmin__body_battery
+label: Body Battery detail
+
+schema: garmin
+table_name: body_battery
+
+dimensions:
+  charged: {}
+  drained: {}
+
+  calendar_date:
+    label: Date
+    primary_key: true
+
+measures:
+  count:
+    label: Days
+    aggregate_type: count
+
+  avg_charged:
+    sql: ${charged}
+    label: Body Battery charged
+    format: NUMBER_0
+    aggregate_type: average
+
+  avg_drained:
+    sql: ${drained}
+    label: Body Battery drained
+    format: NUMBER_0
+    aggregate_type: average

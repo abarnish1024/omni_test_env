@@ -1,0 +1,27 @@
+# Reference this view as garmin__stress
+label: Stress detail
+
+schema: garmin
+table_name: stress
+
+dimensions:
+  overall_stress: {}
+  high_stress_seconds: {}
+  medium_stress_seconds: {}
+  low_stress_seconds: {}
+  rest_stress_seconds: {}
+
+  calendar_date:
+    label: Date
+    primary_key: true
+
+measures:
+  count:
+    label: Days
+    aggregate_type: count
+
+  avg_overall_stress:
+    sql: ${overall_stress}
+    label: Overall stress
+    format: NUMBER_0
+    aggregate_type: average
