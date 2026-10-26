@@ -1,0 +1,100 @@
+# Reference this view as garmin__daily_summary
+label: Daily summary
+
+schema: garmin
+table_name: daily_summary
+
+dimensions:
+  step_goal: {}
+  floors_ascended: {}
+  floors_descended: {}
+  calories_resting: {}
+  hr_min: {}
+  hr_max: {}
+  intensity_moderate_min: {}
+  intensity_vigorous_min: {}
+  intensity_goal_min: {}
+  stress_max: {}
+  body_battery_min: {}
+  body_battery_max: {}
+  body_battery_charged: {}
+  body_battery_drained: {}
+  hydration_goal_ml: {}
+  hydration_consumed_ml: {}
+  respiration_min: {}
+  respiration_max: {}
+
+  calendar_date:
+    label: Date
+    primary_key: true
+
+  steps:
+    label: Steps
+
+  distance_meters:
+    label: Distance (m)
+
+  calories_active:
+    label: Active calories
+
+  calories_total:
+    label: Total calories
+
+  hr_resting:
+    label: Resting heart rate
+
+  stress_avg:
+    label: Average stress
+
+  body_battery_latest:
+    label: Body Battery
+
+  respiration_avg:
+    label: Respiration
+
+measures:
+  count:
+    label: Days
+    aggregate_type: count
+
+  avg_steps:
+    sql: ${steps}
+    label: Average steps
+    format: NUMBER_0
+    aggregate_type: average
+
+  avg_resting_hr:
+    sql: ${hr_resting}
+    label: Resting heart rate
+    format: NUMBER_0
+    aggregate_type: average
+
+  avg_stress:
+    sql: ${stress_avg}
+    label: Average stress
+    format: NUMBER_0
+    aggregate_type: average
+
+  avg_body_battery:
+    sql: ${body_battery_latest}
+    label: Body Battery
+    format: NUMBER_0
+    aggregate_type: average
+
+  total_active_calories:
+    sql: ${calories_active}
+    label: Active calories
+    format: NUMBER_0
+    aggregate_type: sum
+
+  avg_respiration:
+    sql: ${respiration_avg}
+    label: Respiration
+    format: NUMBER_1
+    aggregate_type: average
+
+  total_distance_km:
+    sql: ${distance_meters} / 1000.0
+    label: Distance (km)
+    format: NUMBER_1
+    aggregate_type: sum

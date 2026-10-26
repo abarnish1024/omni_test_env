@@ -1,0 +1,33 @@
+# Reference this view as garmin__weight
+label: Weight
+
+schema: garmin
+table_name: weight
+
+dimensions:
+  weight_grams: {}
+  bmi: {}
+  body_fat_pct: {}
+  body_water_pct: {}
+  bone_mass_grams: {}
+  muscle_mass_grams: {}
+  visceral_fat: {}
+  metabolic_age: {}
+  source_type: {}
+
+  calendar_date:
+    label: Date
+
+  weight_kg:
+    label: Weight (kg)
+
+measures:
+  count:
+    label: Weigh-ins
+    aggregate_type: count
+
+  avg_weight_kg:
+    sql: ${weight_kg}
+    label: Weight (kg)
+    format: NUMBER_1
+    aggregate_type: average

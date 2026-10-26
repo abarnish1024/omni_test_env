@@ -1,0 +1,37 @@
+# Reference this view as garmin__hrv
+label: HRV
+
+schema: garmin
+table_name: hrv
+
+dimensions:
+  last_night_avg: {}
+  weekly_avg: {}
+  last_night_5min_high: {}
+  feedback: {}
+  baseline_low: {}
+  baseline_upper: {}
+
+  calendar_date:
+    label: Date
+    primary_key: true
+
+  status:
+    label: HRV status
+
+measures:
+  count:
+    label: Nights
+    aggregate_type: count
+
+  avg_overnight_hrv:
+    sql: ${last_night_avg}
+    label: Overnight HRV
+    format: NUMBER_0
+    aggregate_type: average
+
+  avg_weekly_hrv:
+    sql: ${weekly_avg}
+    label: Weekly HRV
+    format: NUMBER_0
+    aggregate_type: average

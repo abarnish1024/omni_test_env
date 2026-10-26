@@ -1,0 +1,7 @@
+base_view: garmin__fitness_age
+label: Fitness age
+description: Recent Garmin fitness age.
+
+joins: {}
+
+ai_context: Personal Garmin fitness age. The metric is avg_fitness_age.

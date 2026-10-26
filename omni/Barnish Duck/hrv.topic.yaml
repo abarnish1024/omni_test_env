@@ -1,0 +1,8 @@
+base_view: garmin__hrv
+label: HRV
+description: Nightly and weekly heart rate variability.
+
+joins: {}
+
+ai_context: Personal Garmin HRV. Overnight HRV is avg_overnight_hrv. Weekly
+  average is avg_weekly_hrv.

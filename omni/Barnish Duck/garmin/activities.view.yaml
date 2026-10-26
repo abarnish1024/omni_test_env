@@ -1,0 +1,76 @@
+# Reference this view as garmin__activities
+label: Activities
+
+schema: garmin
+table_name: activities
+
+dimensions:
+  start_time_local: {}
+  distance_meters: {}
+  duration_seconds: {}
+  moving_seconds: {}
+  calories: {}
+  average_hr: {}
+  max_hr: {}
+  aerobic_effect: {}
+  anaerobic_effect: {}
+  training_load: {}
+  elevation_gain_meters: {}
+  elevation_loss_meters: {}
+  steps: {}
+  avg_speed_mps: {}
+  max_speed_mps: {}
+  avg_power: {}
+  norm_power: {}
+  avg_cadence: {}
+  moderate_intensity_min: {}
+  vigorous_intensity_min: {}
+
+  activity_id:
+    label: Activity ID
+    format: ID
+    primary_key: true
+
+  activity_name:
+    label: Activity
+
+  activity_type:
+    label: Type
+
+  calendar_date:
+    label: Date
+
+measures:
+  count:
+    label: Activities
+    aggregate_type: count
+
+  total_distance_km:
+    sql: ${distance_meters} / 1000.0
+    label: Distance (km)
+    format: NUMBER_1
+    aggregate_type: sum
+
+  total_hours:
+    sql: ${duration_seconds} / 3600.0
+    label: Hours
+    format: NUMBER_1
+    aggregate_type: sum
+
+  total_calories:
+    sql: ${calories}
+    label: Calories
+    format: NUMBER_0
+    aggregate_type: sum
+
+  avg_heart_rate:
+    sql: ${average_hr}
+    label: Average heart rate
+    format: NUMBER_0
+    aggregate_type: average
+
+  total_training_load:
+    sql: ${training_load}
+    label: Training load
+    format: NUMBER_0
+    aggregate_type: sum

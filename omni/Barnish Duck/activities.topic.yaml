@@ -1,0 +1,8 @@
+base_view: garmin__activities
+label: Activities
+description: Garmin activities with distance, duration, heart rate, and training load.
+
+joins: {}
+
+ai_context: Personal Garmin workouts and activities. Distance is
+  total_distance_km. Count of sessions is count.

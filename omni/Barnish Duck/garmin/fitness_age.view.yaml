@@ -1,0 +1,35 @@
+# Reference this view as garmin__fitness_age
+label: Fitness age
+
+schema: garmin
+table_name: fitness_age
+
+dimensions:
+  chronological_age: {}
+  fitness_age: {}
+  achievable_fitness_age: {}
+  vigorous_days_avg: {}
+  resting_hr: {}
+  vigorous_minutes_avg: {}
+  bmi: {}
+
+  calendar_date:
+    label: Date
+    primary_key: true
+
+measures:
+  count:
+    label: Days
+    aggregate_type: count
+
+  avg_fitness_age:
+    sql: ${fitness_age}
+    label: Fitness age
+    format: NUMBER_1
+    aggregate_type: average
+
+  avg_achievable_fitness_age:
+    sql: ${achievable_fitness_age}
+    label: Achievable fitness age
+    format: NUMBER_1
+    aggregate_type: average

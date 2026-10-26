@@ -1,0 +1,69 @@
+# Reference this view as garmin__sleep
+label: Sleep
+
+schema: garmin
+table_name: sleep
+
+dimensions:
+  sleep_seconds: {}
+  deep_seconds: {}
+  light_seconds: {}
+  rem_seconds: {}
+  awake_seconds: {}
+  nap_seconds: {}
+  awake_count: {}
+  avg_heart_rate: {}
+  avg_sleep_stress: {}
+  avg_respiration: {}
+  deep_pct: {}
+  light_pct: {}
+  rem_pct: {}
+  sleep_need_baseline_min: {}
+  sleep_need_actual_min: {}
+  sleep_start_local: {}
+  sleep_end_local: {}
+
+  calendar_date:
+    label: Date
+    primary_key: true
+
+  sleep_score:
+    label: Sleep score
+
+  sleep_score_qualifier:
+    label: Sleep quality
+
+measures:
+  count:
+    label: Nights
+    aggregate_type: count
+
+  avg_sleep_hours:
+    sql: ${sleep_seconds} / 3600.0
+    label: Sleep hours
+    format: NUMBER_1
+    aggregate_type: average
+
+  avg_sleep_score:
+    sql: ${sleep_score}
+    label: Sleep score
+    format: NUMBER_0
+    aggregate_type: average
+
+  avg_deep_hours:
+    sql: ${deep_seconds} / 3600.0
+    label: Deep sleep hours
+    format: NUMBER_1
+    aggregate_type: average
+
+  avg_rem_hours:
+    sql: ${rem_seconds} / 3600.0
+    label: REM hours
+    format: NUMBER_1
+    aggregate_type: average
+
+  avg_light_hours:
+    sql: ${light_seconds} / 3600.0
+    label: Light sleep hours
+    format: NUMBER_1
+    aggregate_type: average

@@ -1,0 +1,10 @@
+base_view: garmin__daily_summary
+label: Daily health
+description: One row per day of Garmin steps, heart rate, stress, Body Battery,
+  calories, and respiration.
+
+joins: {}
+
+ai_context: Personal Garmin daily wellness. Map steps to avg_steps, resting
+  heart rate to avg_resting_hr, stress to avg_stress, body battery to
+  avg_body_battery.

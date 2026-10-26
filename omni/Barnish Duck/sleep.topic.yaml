@@ -1,0 +1,8 @@
+base_view: garmin__sleep
+label: Sleep
+description: Nightly Garmin sleep duration, stages, and sleep score.
+
+joins: {}
+
+ai_context: Personal Garmin sleep. Map sleep score to avg_sleep_score and time
+  asleep to avg_sleep_hours.
