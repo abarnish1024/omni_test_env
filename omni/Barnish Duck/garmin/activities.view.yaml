@@ -94,22 +94,23 @@ dimensions:
     sql: hr_zone_5_seconds
 
   fastest_1k_minutes:
-    sql: CASE WHEN ${fastest_1k_seconds} > 0 THEN ${fastest_1k_seconds} / 60.0 END
-    label: Fastest kilometer (min)
+    sql: CASE WHEN ${fastest_mile_seconds} > 0 THEN ${fastest_mile_seconds} /
+      86400.0 END
+    label: Fastest mile
 
   pace_min_per_km:
-    sql: CASE WHEN ${avg_speed_mps} > 0.3 THEN (1000.0 / ${avg_speed_mps}) / 60.0
-      END
-    label: Pace (min/km)
+    sql: CASE WHEN ${avg_speed_mps} > 0.3 THEN (1609.344 / ${avg_speed_mps}) /
+      86400.0 END
+    label: Pace
 
   speed_kmh:
-    sql: CASE WHEN ${avg_speed_mps} > 0.3 THEN ${avg_speed_mps} * 3.6 END
-    label: Speed (km/h)
+    sql: CASE WHEN ${avg_speed_mps} > 0.3 THEN ${avg_speed_mps} * 2.236936 END
+    label: Speed (mph)
 
   swim_pace_min_per_100m:
-    sql: CASE WHEN ${avg_speed_mps} >= 0.4 AND ${avg_speed_mps} <= 2.2 THEN (100.0 /
-      ${avg_speed_mps}) / 60.0 END
-    label: Pace (min/100m)
+    sql: CASE WHEN ${avg_speed_mps} >= 0.4 AND ${avg_speed_mps} <= 2.2 THEN (91.44 /
+      ${avg_speed_mps}) / 86400.0 END
+    label: Pace
 
 measures:
   count:
@@ -117,8 +118,8 @@ measures:
     aggregate_type: count
 
   total_distance_km:
-    sql: ${distance_meters} / 1000.0
-    label: Distance (km)
+    sql: ${distance_meters} / 1609.344
+    label: Distance (mi)
     format: NUMBER_1
     aggregate_type: sum
 
@@ -148,20 +149,20 @@ measures:
 
   avg_pace_min_per_km:
     sql: ${pace_min_per_km}
-    label: Pace (min/km)
-    format: NUMBER_2
+    label: Pace
+    format: "[m]:ss"
     aggregate_type: average
 
   avg_speed_kmh:
     sql: ${speed_kmh}
-    label: Speed (km/h)
+    label: Speed (mph)
     format: NUMBER_1
     aggregate_type: average
 
   avg_swim_pace:
     sql: ${swim_pace_min_per_100m}
-    label: Pace (min/100m)
-    format: NUMBER_2
+    label: Pace
+    format: "[m]:ss"
     aggregate_type: average
 
   heart_rate:
@@ -220,6 +221,6 @@ measures:
 
   best_1k_minutes:
     sql: ${fastest_1k_minutes}
-    label: Best kilometer (min)
-    format: NUMBER_2
+    label: Fastest mile
+    format: "[m]:ss"
     aggregate_type: min

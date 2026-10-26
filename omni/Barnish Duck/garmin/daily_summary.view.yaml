@@ -94,7 +94,7 @@ measures:
     aggregate_type: average
 
   total_distance_km:
-    sql: ${distance_meters} / 1000.0
-    label: Distance (km)
+    sql: ${distance_meters} / 1609.344
+    label: Distance (mi)
     format: NUMBER_1
     aggregate_type: sum
