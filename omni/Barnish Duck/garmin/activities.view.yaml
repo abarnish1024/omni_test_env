@@ -25,6 +25,8 @@ dimensions:
   avg_cadence: {}
   moderate_intensity_min: {}
   vigorous_intensity_min: {}
+  fastest_mile_seconds: {}
+  fastest_100m_seconds: {}
 
   activity_id:
     label: Activity ID
@@ -39,6 +41,75 @@ dimensions:
 
   calendar_date:
     label: Date
+
+  sport:
+    sql: sport
+    label: Sport
+
+  bike_cadence:
+    sql: bike_cadence
+    label: Bike cadence
+
+  swim_cadence:
+    sql: swim_cadence
+    label: Swim cadence
+
+  swolf:
+    sql: swolf
+    label: SWOLF
+
+  strokes:
+    sql: strokes
+    label: Strokes
+
+  stride_length_cm:
+    sql: stride_length_cm
+    label: Stride length (cm)
+
+  ground_contact_ms:
+    sql: ground_contact_ms
+    label: Ground contact (ms)
+
+  vertical_oscillation_cm:
+    sql: vertical_oscillation_cm
+    label: Vertical oscillation (cm)
+
+  fastest_1k_seconds:
+    sql: fastest_1k_seconds
+    label: Fastest kilometer (sec)
+
+  hr_zone_1_seconds:
+    sql: hr_zone_1_seconds
+
+  hr_zone_2_seconds:
+    sql: hr_zone_2_seconds
+
+  hr_zone_3_seconds:
+    sql: hr_zone_3_seconds
+
+  hr_zone_4_seconds:
+    sql: hr_zone_4_seconds
+
+  hr_zone_5_seconds:
+    sql: hr_zone_5_seconds
+
+  fastest_1k_minutes:
+    sql: CASE WHEN ${fastest_1k_seconds} > 0 THEN ${fastest_1k_seconds} / 60.0 END
+    label: Fastest kilometer (min)
+
+  pace_min_per_km:
+    sql: CASE WHEN ${avg_speed_mps} > 0.3 THEN (1000.0 / ${avg_speed_mps}) / 60.0
+      END
+    label: Pace (min/km)
+
+  speed_kmh:
+    sql: CASE WHEN ${avg_speed_mps} > 0.3 THEN ${avg_speed_mps} * 3.6 END
+    label: Speed (km/h)
+
+  swim_pace_min_per_100m:
+    sql: CASE WHEN ${avg_speed_mps} >= 0.4 AND ${avg_speed_mps} <= 2.2 THEN (100.0 /
+      ${avg_speed_mps}) / 60.0 END
+    label: Pace (min/100m)
 
 measures:
   count:
@@ -74,3 +145,81 @@ measures:
     label: Training load
     format: NUMBER_0
     aggregate_type: sum
+
+  avg_pace_min_per_km:
+    sql: ${pace_min_per_km}
+    label: Pace (min/km)
+    format: NUMBER_2
+    aggregate_type: average
+
+  avg_speed_kmh:
+    sql: ${speed_kmh}
+    label: Speed (km/h)
+    format: NUMBER_1
+    aggregate_type: average
+
+  avg_swim_pace:
+    sql: ${swim_pace_min_per_100m}
+    label: Pace (min/100m)
+    format: NUMBER_2
+    aggregate_type: average
+
+  heart_rate:
+    sql: NULLIF(${average_hr}, 0)
+    label: Heart rate
+    format: NUMBER_0
+    aggregate_type: average
+
+  zone_1_minutes:
+    sql: ${hr_zone_1_seconds} / 60.0
+    label: Zone 1
+    format: NUMBER_0
+    aggregate_type: sum
+
+  zone_2_minutes:
+    sql: ${hr_zone_2_seconds} / 60.0
+    label: Zone 2
+    format: NUMBER_0
+    aggregate_type: sum
+
+  zone_3_minutes:
+    sql: ${hr_zone_3_seconds} / 60.0
+    label: Zone 3
+    format: NUMBER_0
+    aggregate_type: sum
+
+  zone_4_minutes:
+    sql: ${hr_zone_4_seconds} / 60.0
+    label: Zone 4
+    format: NUMBER_0
+    aggregate_type: sum
+
+  zone_5_minutes:
+    sql: ${hr_zone_5_seconds} / 60.0
+    label: Zone 5
+    format: NUMBER_0
+    aggregate_type: sum
+
+  avg_run_cadence:
+    sql: NULLIF(${avg_cadence}, 0)
+    label: Cadence
+    format: NUMBER_0
+    aggregate_type: average
+
+  avg_power_w:
+    sql: NULLIF(${avg_power}, 0)
+    label: Power (W)
+    format: NUMBER_0
+    aggregate_type: average
+
+  avg_swolf:
+    sql: CASE WHEN ${swolf} BETWEEN 15 AND 120 THEN ${swolf} END
+    label: SWOLF
+    format: NUMBER_0
+    aggregate_type: average
+
+  best_1k_minutes:
+    sql: ${fastest_1k_minutes}
+    label: Best kilometer (min)
+    format: NUMBER_2
+    aggregate_type: min
