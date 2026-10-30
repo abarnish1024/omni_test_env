@@ -1,0 +1,4 @@
+base_view: main__linq_district_nutrition
+label: District nutrition
+
+joins: {}

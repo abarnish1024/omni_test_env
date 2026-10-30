@@ -1,0 +1,5 @@
+base_view: main__linq_report_templates
+label: Saved views
+
+joins:
+  main__linq_saved_state: {}
