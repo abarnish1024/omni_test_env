@@ -1,3 +1,26 @@
 base_view: main__linq_inventory_report
 
-joins: {}
+joins:
+  main__linq_building_lunch: {}
+  main__linq_district_nutrition: {}
+  main__linq_report_templates: {}
+
+relationships:
+  - join_from_view: main__linq_inventory_report
+    join_to_view: main__linq_building_lunch
+    join_type: always_left
+    on_sql: ${main__linq_inventory_report.district_name} =
+      ${main__linq_building_lunch.district_name}
+    relationship_type: many_to_many
+
+  - join_from_view: main__linq_inventory_report
+    join_to_view: main__linq_district_nutrition
+    join_type: always_left
+    on_sql: ${main__linq_inventory_report.district_name} =
+      ${main__linq_district_nutrition.district_name}
+    relationship_type: many_to_many
+
+  - join_from_view: main__linq_inventory_report
+    join_to_view: main__linq_report_templates
+    join_type: cross
+    relationship_type: many_to_many
