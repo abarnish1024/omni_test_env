@@ -1,0 +1,3 @@
+base_view: main__linq_inventory_report
+
+joins: {}
