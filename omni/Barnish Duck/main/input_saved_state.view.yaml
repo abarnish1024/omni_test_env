@@ -1,0 +1,10 @@
+# Reference this view as input_saved_state
+schema: main
+table_name: linq_saved_state
+
+dimensions:
+  saved_state: {}
+
+  id:
+    hidden: true
+    primary_key: true

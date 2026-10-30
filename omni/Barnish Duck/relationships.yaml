@@ -27,3 +27,9 @@
   join_type: always_left
   on_sql: ${main__linq_report_templates.id} = ${main__linq_saved_state.id}
   relationship_type: one_to_one
+
+- join_from_view: main__linq_report_templates
+  join_to_view: input_saved_state
+  join_type: always_left
+  on_sql: ${main__linq_report_templates.id} = ${input_saved_state.id}
+  relationship_type: one_to_one

@@ -3,3 +3,4 @@ label: Saved views
 
 joins:
   main__linq_saved_state: {}
+  input_saved_state: {}
