@@ -1,0 +1,19 @@
+# Reference this view as omni_dbt__linq_district_nutrition
+schema_label: ""
+
+schema: omni_dbt
+table_name: linq_district_nutrition
+
+dimensions:
+  district_name: {}
+  state: {}
+  school_year: {}
+  cep_status: {}
+  total_enrollment: {}
+  reimbursable_meals: {}
+  a_la_carte_dollars: {}
+  suppression_flag: {}
+
+measures:
+  count:
+    aggregate_type: count

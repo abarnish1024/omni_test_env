@@ -1,0 +1,20 @@
+# Reference this view as main__linq_building_lunch
+schema: main
+table_name: linq_building_lunch
+
+dimensions:
+  district_name: {}
+  building_name: {}
+  school_level: {}
+  school_year: {}
+  students_eating_lunch: {}
+  lunches: {}
+  free_lunches: {}
+  reduced_lunches: {}
+  paid_lunches: {}
+  avg_daily_lunches: {}
+  suppression_flag: {}
+
+measures:
+  count:
+    aggregate_type: count

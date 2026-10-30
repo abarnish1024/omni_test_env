@@ -1,0 +1,19 @@
+# Reference this view as omni_dbt__linq_report_templates
+schema_label: ""
+
+schema: omni_dbt
+table_name: linq_report_templates
+
+dimensions:
+  name: {}
+  owner: {}
+  state_json: {}
+  saved_at: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+measures:
+  count:
+    aggregate_type: count
