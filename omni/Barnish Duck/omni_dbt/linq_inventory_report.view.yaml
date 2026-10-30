@@ -1,0 +1,22 @@
+# Reference this view as omni_dbt__linq_inventory_report
+schema_label: ""
+
+schema: omni_dbt
+table_name: linq_inventory_report
+
+dimensions:
+  unique_identifier: {}
+  district_name: {}
+  school_name: {}
+  warehouse: {}
+  item_name: {}
+  count_date: {}
+  movement_type: {}
+  quantity: {}
+  receipt_unit_cost: {}
+  current_vendor_price: {}
+  inventory_value: {}
+
+measures:
+  count:
+    aggregate_type: count
