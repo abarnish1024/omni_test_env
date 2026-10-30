@@ -1,0 +1,44 @@
+# Reference this view as linq_district_nutrition
+uploaded_table_name: linq-district-nutrition.csv::c378b740-5ea4-4b61-a115-d63f7f78dc06
+
+dimensions:
+  district_name:
+    display_order: 0
+
+  state:
+    display_order: 1
+
+  school_year:
+    display_order: 2
+
+  cep_status:
+    display_order: 3
+
+  suppression_flag:
+    display_order: 4
+
+  total_enrollment_raw:
+    sql: '"total_enrollment"'
+    hidden: true
+
+  reimbursable_meals_raw:
+    sql: '"reimbursable_meals"'
+    hidden: true
+
+  a_la_carte_dollars_raw:
+    sql: '"a_la_carte_dollars"'
+    hidden: true
+
+measures:
+  total_enrollment:
+    sql: ${total_enrollment_raw}
+    aggregate_type: sum
+
+  reimbursable_meals:
+    sql: ${reimbursable_meals_raw}
+    aggregate_type: sum
+
+  a_la_carte_dollars:
+    sql: ${a_la_carte_dollars_raw}
+    format: currency_2
+    aggregate_type: sum

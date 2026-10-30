@@ -1,0 +1,67 @@
+# Reference this view as linq_building_lunch
+uploaded_table_name: linq-building-lunch.csv::7789021c-5f59-465a-8ab7-5fc98b9a5060
+
+dimensions:
+  district_name:
+    display_order: 0
+
+  building_name:
+    display_order: 1
+
+  school_level:
+    display_order: 2
+
+  school_year:
+    display_order: 3
+
+  suppression_flag:
+    display_order: 4
+
+  students_eating_lunch_raw:
+    sql: '"students_eating_lunch"'
+    hidden: true
+
+  lunches_raw:
+    sql: '"lunches"'
+    hidden: true
+
+  free_lunches_raw:
+    sql: '"free_lunches"'
+    hidden: true
+
+  reduced_lunches_raw:
+    sql: '"reduced_lunches"'
+    hidden: true
+
+  paid_lunches_raw:
+    sql: '"paid_lunches"'
+    hidden: true
+
+  avg_daily_lunches_raw:
+    sql: '"avg_daily_lunches"'
+    hidden: true
+
+measures:
+  students_eating_lunch:
+    sql: ${students_eating_lunch_raw}
+    aggregate_type: sum
+
+  lunches:
+    sql: ${lunches_raw}
+    aggregate_type: sum
+
+  free_lunches:
+    sql: ${free_lunches_raw}
+    aggregate_type: sum
+
+  reduced_lunches:
+    sql: ${reduced_lunches_raw}
+    aggregate_type: sum
+
+  paid_lunches:
+    sql: ${paid_lunches_raw}
+    aggregate_type: sum
+
+  avg_daily_lunches:
+    sql: ${avg_daily_lunches_raw}
+    aggregate_type: average

@@ -1,0 +1,22 @@
+# Reference this view as linq_report_templates
+uploaded_table_name: linq-report-templates.csv::2c635d87-9eae-4899-b452-e6f27acabbf8
+
+dimensions:
+  id:
+    display_order: 0
+
+  name:
+    display_order: 1
+
+  owner:
+    display_order: 2
+
+  state_json:
+    display_order: 3
+
+  saved_at:
+    display_order: 4
+
+measures:
+  count:
+    aggregate_type: count

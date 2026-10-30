@@ -1,0 +1,54 @@
+# Reference this view as linq_inventory_report
+uploaded_table_name: linq-inventory-report.csv::cc30b4f7-f942-4d9c-bc1c-dde3d24de76a
+
+dimensions:
+  unique_identifier:
+    display_order: 0
+    hidden: true
+
+  district_name:
+    display_order: 1
+
+  school_name:
+    display_order: 2
+
+  warehouse:
+    display_order: 3
+    hidden: true
+
+  item_name:
+    display_order: 4
+
+  count_date:
+    display_order: 5
+    timeframes: [ date ]
+
+  movement_type:
+    display_order: 6
+    hidden: true
+
+  receipt_unit_cost:
+    display_order: 8
+    hidden: true
+
+  current_vendor_price:
+    display_order: 9
+    hidden: true
+
+  quantity_raw:
+    sql: '"quantity"'
+    hidden: true
+
+  inventory_value_raw:
+    sql: '"inventory_value"'
+    hidden: true
+
+measures:
+  quantity:
+    sql: ${quantity_raw}
+    aggregate_type: sum
+
+  inventory_value:
+    sql: ${inventory_value_raw}
+    format: currency_2
+    aggregate_type: sum
