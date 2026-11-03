@@ -1,0 +1,18 @@
+# Reference this view as omni_dbt__inventory_variance_saves
+schema_label: ""
+
+schema: omni_dbt
+table_name: inventory_variance_saves
+
+dimensions:
+  name: {}
+  owner: {}
+  saved_at: {}
+
+  id:
+    format: ID
+    primary_key: true
+
+measures:
+  count:
+    aggregate_type: count

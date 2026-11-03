@@ -1,0 +1,4 @@
+base_view: main__inventory_variance_saves
+label: Inventory variance saves
+
+joins: {}
