@@ -9,6 +9,9 @@ dimensions:
   budget_amount: {}
   actual_amount: {}
   variance_amount: {}
+  budget_vs_actual_view: {}
+  fiscal_year: {}
+  period: {}
 
 measures:
   count:

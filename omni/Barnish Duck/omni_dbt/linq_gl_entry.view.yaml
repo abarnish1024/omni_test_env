@@ -12,6 +12,8 @@ dimensions:
   description: {}
   debit: {}
   credit: {}
+  general_ledger_view: {}
+  fiscal_year: {}
 
 measures:
   count:

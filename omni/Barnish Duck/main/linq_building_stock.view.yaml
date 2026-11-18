@@ -9,6 +9,9 @@ dimensions:
   storage: {}
   quantity_on_hand: {}
   unit: {}
+  building_inventory_view: {}
+  fund: {}
+  meal: {}
 
 measures:
   count:

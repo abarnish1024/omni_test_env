@@ -10,6 +10,8 @@ dimensions:
   counted_quantity: {}
   variance_quantity: {}
   count_date: {}
+  physical_count_view: {}
+  fund: {}
 
 measures:
   count:
