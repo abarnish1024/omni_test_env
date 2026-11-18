@@ -1,0 +1,20 @@
+# Reference this view as omni_dbt__linq_reimbursement_claim
+schema_label: ""
+
+schema: omni_dbt
+table_name: linq_reimbursement_claim
+
+dimensions:
+  district_name: {}
+  program: {}
+  revision: {}
+  meal_service: {}
+  claim_month: {}
+  free_meals: {}
+  reduced_meals: {}
+  paid_meals: {}
+  reimbursement_amount: {}
+
+measures:
+  count:
+    aggregate_type: count

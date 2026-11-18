@@ -1,0 +1,19 @@
+# Reference this view as omni_dbt__linq_cnips_site_claim
+schema_label: ""
+
+schema: omni_dbt
+table_name: linq_cnips_site_claim
+
+dimensions:
+  district_name: {}
+  site: {}
+  school_name: {}
+  program: {}
+  meal_service: {}
+  claim_month: {}
+  meals_served: {}
+  reimbursement_amount: {}
+
+measures:
+  count:
+    aggregate_type: count

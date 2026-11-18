@@ -1,0 +1,21 @@
+# Reference this view as main__linq_meal_application
+schema: main
+table_name: linq_meal_application
+
+dimensions:
+  student_name: {}
+  district_name: {}
+  school_name: {}
+  school_year: {}
+  form_type: {}
+  language: {}
+  status: {}
+  household_size: {}
+  submitted_date: {}
+
+  application_id:
+    format: ID
+
+measures:
+  count:
+    aggregate_type: count
