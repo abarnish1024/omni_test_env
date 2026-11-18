@@ -1,0 +1,18 @@
+# Reference this view as omni_dbt__linq_physical_count
+schema_label: ""
+
+schema: omni_dbt
+table_name: linq_physical_count
+
+dimensions:
+  district_name: {}
+  school_name: {}
+  item_name: {}
+  system_quantity: {}
+  counted_quantity: {}
+  variance_quantity: {}
+  count_date: {}
+
+measures:
+  count:
+    aggregate_type: count

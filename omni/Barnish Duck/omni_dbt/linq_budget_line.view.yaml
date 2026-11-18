@@ -1,0 +1,17 @@
+# Reference this view as omni_dbt__linq_budget_line
+schema_label: ""
+
+schema: omni_dbt
+table_name: linq_budget_line
+
+dimensions:
+  district_name: {}
+  fund: {}
+  account: {}
+  budget_amount: {}
+  actual_amount: {}
+  variance_amount: {}
+
+measures:
+  count:
+    aggregate_type: count

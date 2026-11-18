@@ -1,0 +1,17 @@
+# Reference this view as omni_dbt__linq_building_stock
+schema_label: ""
+
+schema: omni_dbt
+table_name: linq_building_stock
+
+dimensions:
+  district_name: {}
+  school_name: {}
+  item_name: {}
+  storage: {}
+  quantity_on_hand: {}
+  unit: {}
+
+measures:
+  count:
+    aggregate_type: count

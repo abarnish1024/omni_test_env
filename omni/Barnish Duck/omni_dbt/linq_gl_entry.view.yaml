@@ -1,0 +1,18 @@
+# Reference this view as omni_dbt__linq_gl_entry
+schema_label: ""
+
+schema: omni_dbt
+table_name: linq_gl_entry
+
+dimensions:
+  district_name: {}
+  entry_date: {}
+  fund: {}
+  account: {}
+  description: {}
+  debit: {}
+  credit: {}
+
+measures:
+  count:
+    aggregate_type: count
