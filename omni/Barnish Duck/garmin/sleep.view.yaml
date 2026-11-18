@@ -67,3 +67,49 @@ measures:
     label: Light sleep hours
     format: NUMBER_1
     aggregate_type: average
+
+  min_sleep_score:
+    sql: ${sleep_score}
+    label: Sleep score (min)
+    format: NUMBER_0
+    aggregate_type: min
+
+  sleep_score_p10:
+    sql: ${sleep_score}
+    label: Sleep score (P10)
+    format: NUMBER_0
+    aggregate_type: percentile
+    percentile: 10
+
+  sleep_score_p25:
+    sql: ${sleep_score}
+    label: Sleep score (P25)
+    format: NUMBER_0
+    aggregate_type: percentile
+    percentile: 25
+
+  median_sleep_score:
+    sql: ${sleep_score}
+    label: Sleep score (median)
+    format: NUMBER_0
+    aggregate_type: median
+
+  sleep_score_p75:
+    sql: ${sleep_score}
+    label: Sleep score (P75)
+    format: NUMBER_0
+    aggregate_type: percentile
+    percentile: 75
+
+  sleep_score_p90:
+    sql: ${sleep_score}
+    label: Sleep score (P90)
+    format: NUMBER_0
+    aggregate_type: percentile
+    percentile: 90
+
+  max_sleep_score:
+    sql: ${sleep_score}
+    label: Sleep score (max)
+    format: NUMBER_0
+    aggregate_type: max
